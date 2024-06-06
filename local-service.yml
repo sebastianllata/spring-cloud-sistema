@@ -1,1 +1,25 @@
-
+server:
+   port: ${PORT:8864}
+message: Configuracion de local en el servidor levantado!
+eureka:
+  client:
+    register-with-eureka: true
+    #fetch-registry: false
+    serviceurl:
+      defaultZone: http://localhost:8850/eureka/    
+spring:
+  application:
+    name: ms_local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/crudcloud?serverTimezone=UTC
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      database-platform: org.hibernate.dialect.MySQLDialect                     
+  cloud:
+    config:
+      uri: http://localhost:8860 
+ 
