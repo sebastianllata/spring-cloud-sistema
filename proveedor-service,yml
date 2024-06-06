@@ -1,1 +1,3 @@
-
+server:
+    port: ${PORT:8865}
+message: Configuracion de Proveedor en el servidor levantado!
